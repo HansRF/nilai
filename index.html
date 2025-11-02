@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Form Nilai Siswa SMP</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="card" role="main">
+      <h1>Pengumpulan Nilai Siswa SMP</h1>
+      <p class="lead">Isi data sesuai nilai rapor/penilaian resmi (0–100).</p>
+
+      <form id="nilaiForm" autocomplete="off">
+        <div class="grid">
+          <div>
+            <label for="nama">Nama Siswa </label>
+            <input id="nama" name="nama" type="text" required />
+          </div>
+
+          <div>
+            <label for="kelas">Kelas </label>
+            <select id="kelas" name="kelas" required>
+              <option value="" disabled selected hidden>-- Pilih --</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="semester">Semester </label>
+            <select id="semester" name="semester" required>
+              <option value="" disabled selected hidden>-- Pilih --</option>
+              <option>Ganjil</option>
+              <option>Genap</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="sekolah">Nama Sekolah </label>
+            <input id="sekolah" name="sekolah" type="text" required />
+          </div>
+
+          <div>
+            <label for="matematika">Nilai Matematika (0–100) </label>
+            <input
+              id="matematika"
+              name="matematika"
+              type="number"
+              min="0"
+              max="100"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="ipa">Nilai IPA (0–100) </label>
+            <input
+              id="ipa"
+              name="ipa"
+              type="number"
+              min="0"
+              max="100"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="ips">Nilai IPS (0–100) </label>
+            <input
+              id="ips"
+              name="ips"
+              type="number"
+              min="0"
+              max="100"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="indo">Nilai Bahasa Indonesia (0–100) </label>
+            <input
+              id="indo"
+              name="indo"
+              type="number"
+              min="0"
+              max="100"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="inggris">Nilai Bahasa Inggris (0–100) </label>
+            <input
+              id="inggris"
+              name="inggris"
+              type="number"
+              min="0"
+              max="100"
+              required
+            />
+          </div>
+
+          <div class="full">
+            <label for="konfirmasi">Apakah nilai ini asli dari rapor?</label>
+            <select id="konfirmasi" name="konfirmasi" required>
+              <option value="" disabled selected hidden>-- Pilih --</option>
+              <option>Ya</option>
+              <option>Tidak</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="tanggal">Tanggal Pengisian </label>
+            <input id="tanggal" name="tanggal" type="date" required />
+          </div>
+
+          <div class="full">
+            <label for="catatan">Catatan (opsional)</label>
+            <input id="catatan" name="catatan" type="text" />
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="secondary" id="resetBtn">Reset</button>
+          <button type="submit" id="submitBtn">Kirim Data</button>
+        </div>
+
+        <p class="note">
+          Dengan mengirimkan formulir ini, Anda menyetujui pengumpulan data
+        </p>
+      </form>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <!-- Firebase SDK (modular) -->
+    <script type="module" src="assets/js/firebase-config.js"></script>
+    <script type="module" src="assets/js/app.js"></script>
+  </body>
+</html>
